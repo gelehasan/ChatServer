@@ -45,7 +45,9 @@ int main(void)
     while(1) {
         // reseting monitored socket
         FD_ZERO(&reads_fds);
+        // adding our soccket to the list of monitered sockets
         FD_SET(sockfd,&reads_fds);
+        // helps idenfiy  how many sockets being monitored 
         MAX_SD=sockfd;
 
         //Checking if there is already connected client and adding them to the monitoring listttttttttttttttttt
