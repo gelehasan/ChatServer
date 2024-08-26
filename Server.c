@@ -80,6 +80,7 @@ int main(void)
                 exit(EXIT_FAILURE);
             }
 
+            // findig an empty slot and saving the connected socket there 
            for(int i=0; i<MAX_CLIENT; i++) {
                current_client= client_socket[i];
 
