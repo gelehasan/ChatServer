@@ -15,6 +15,8 @@ int main(void)
     int addrLength= sizeof(address);
     fd_set reads_fds;
     char buffer[255];
+    
+    // setting current socket being monitored to zero
     for(int i=0; i<MAX_CLIENT; i++) {
         client_socket[i]=0;
     }
@@ -41,6 +43,7 @@ int main(void)
     };
 
     while(1) {
+        // reseting monitored socket
         FD_ZERO(&reads_fds);
         FD_SET(sockfd,&reads_fds);
         MAX_SD=sockfd;
